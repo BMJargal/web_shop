@@ -155,7 +155,7 @@ namespace Web_Shop.Application.Services
         {
             var entity = await _unitOfWork.Repository<T>().GetByIdAsync(id);
 
-            await _unitOfWork.Repository<T>().DeleteAsync(entity);
+            await _unitOfWork.Repository<T>().DeleteAsync(entity!);
 
             return;
         }

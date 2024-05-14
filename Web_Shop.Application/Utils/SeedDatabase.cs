@@ -26,6 +26,7 @@ namespace Web_Shop.Application.Utils
             try
             {
                 await PopulateTableAsync<Customer>("SeedData/customers.json", unitOfWork);
+                await PopulateTableAsync<Product>("SeedData/products.json", unitOfWork);
 
             }
             catch (Exception ex)
@@ -54,7 +55,7 @@ namespace Web_Shop.Application.Utils
 
             var entities = JsonSerializer.Deserialize<List<T>>(entitiesData, serializerOptions);
 
-            foreach (var entity in entities)
+            foreach (var entity in entities!)
             {
                 await repository.AddAsync(entity);
             }

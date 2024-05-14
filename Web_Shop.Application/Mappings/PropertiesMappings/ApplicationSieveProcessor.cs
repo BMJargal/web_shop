@@ -19,10 +19,12 @@ namespace Web_Shop.Application.Mappings.PropertiesMappings
         {
         }
 
+   
         protected override SievePropertyMapper MapProperties(SievePropertyMapper mapper)
         {
             return mapper
-                .ApplyConfiguration<SieveConfigurationForCustomer>();
+                .ApplyConfiguration<SieveConfigurationForCustomer>()
+                .ApplyConfiguration<SieveConfigurationForProduct>(); 
         }
     }
 }
